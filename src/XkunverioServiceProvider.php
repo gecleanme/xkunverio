@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace gecleanme\Xkunverio;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use gecleanme\Xkunverio\Commands\XkunverioCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class XkunverioServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('xkunverio')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_xkunverio_table')
+            ->hasCommand(XkunverioCommand::class);
     }
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace gecleanme\Xkunverio\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class XkunverioCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'xkunverio';
 
     public $description = 'My command';
 
