@@ -2,9 +2,9 @@
 
 namespace gecleanme\Xkunverio\Tests;
 
+use gecleanme\Xkunverio\XkunverioServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use gecleanme\Xkunverio\XkunverioServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -2,9 +2,9 @@
 
 namespace gecleanme\Xkunverio;
 
+use gecleanme\Xkunverio\Commands\XkunverioCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use gecleanme\Xkunverio\Commands\XkunverioCommand;
 
 class XkunverioServiceProvider extends PackageServiceProvider
 {
