@@ -5,6 +5,6 @@ it('can test', function () {
 });
 
 it('returns converted values', function () {
-   $conversion= new \gecleanme\Xkunverio\XConvert('Kilometer','Meter',1000);
-  expect($conversion->XConvert())->toBe(1000000.0);
+    $conversion = new \gecleanme\Xkunverio\XConvert('Kilometer', 'Meter', 1000);
+    expect($conversion->XConvert())->toBe(1000000.0);
 });

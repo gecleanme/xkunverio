@@ -2,10 +2,8 @@
 
 namespace gecleanme\Xkunverio;
 
-
- class XConvert
+class XConvert
 {
-
     public function __construct(
         private readonly string $fromUnit,
         private readonly string $toUnit,
@@ -13,9 +11,6 @@ namespace gecleanme\Xkunverio;
         private float $meterValue = 0,
         private float $toMeter = 0,
         private float $result = 0,
-
-
-
 
     ) {
         //
@@ -50,7 +45,6 @@ namespace gecleanme\Xkunverio;
                 $this->meterValue = $this->length * 1000;
                 break;
 
-
         }
 
         return $this->meterValue;
@@ -60,7 +54,7 @@ namespace gecleanme\Xkunverio;
     {
         switch ($this->toUnit) {
             case 'Inch':
-               $this->result = $this->meterValue / 0.0254;
+                $this->result = $this->meterValue / 0.0254;
                 break;
 
             case 'Feet':
@@ -92,15 +86,16 @@ namespace gecleanme\Xkunverio;
                 break;
 
         }
+
         return $this->result;
 
     }
 
     public function XConvert(): float
     {
-         round($this->toMeter(), 3);
+        round($this->toMeter(), 3);
+
         return round($this->fromMeter(), 3);
 
     }
-
 }
