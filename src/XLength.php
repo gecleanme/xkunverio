@@ -6,6 +6,11 @@ use InvalidArgumentException;
 
 class XLength
 {
+    /**
+     * Unit conversion factors (base unit: Meter)
+     *
+     * @var array
+     */
     protected static array $conversionFactors = [
         'Inch' => 0.0254,
         'Feet' => 0.3048,
@@ -17,11 +22,26 @@ class XLength
         'Kilometer' => 1000,
     ];
 
+    /**
+     * Create a new XLength instance.
+     *
+     * @param  string  $fromUnit
+     * @param  string  $toUnit
+     * @param  float  $length
+     * @return static
+     */
     public static function convert(string $fromUnit, string $toUnit, float $length): static
     {
         return new static($fromUnit, $toUnit, $length);
     }
 
+    /**
+     * XLength constructor.
+     *
+     * @param  string  $fromUnit
+     * @param  string  $toUnit
+     * @param  float  $length
+     */
     public function __construct(
         protected string $fromUnit,
         protected string $toUnit,
@@ -30,39 +50,64 @@ class XLength
         $this->validateUnits();
     }
 
+    /**
+     * Get the converted length value.
+     *
+     * @return float
+     */
     public function getResult(): float
     {
         return $this->convertLength();
     }
 
+    /**
+     * Convert the length to the desired unit.
+     *
+     * @return float
+     */
     protected function convertLength(): float
     {
         $fromFactor = $this->getConversionFactor($this->fromUnit);
         $toFactor = $this->getConversionFactor($this->toUnit);
 
-        $meterValue = $this->length * $fromFactor; // Convert from source unit to meters
-        return $meterValue / $toFactor;  // Convert from meters to target unit
+        // Convert from source unit to meters
+        $meterValue = $this->length * $fromFactor;
 
+        // Convert from meters to target unit
+        return $meterValue / $toFactor;
     }
 
+    /**
+     * Get the conversion factor for a given unit.
+     *
+     * @param  string  $unit
+     * @return float
+     * @throws InvalidArgumentException
+     */
     protected function getConversionFactor(string $unit): float
     {
-        if (! array_key_exists($unit, static::$conversionFactors)) {
+        if (!array_key_exists($unit, static::$conversionFactors)) {
             throw new InvalidArgumentException("Invalid unit: {$unit}");
         }
 
         return static::$conversionFactors[$unit];
     }
 
+    /**
+     * Validate the input units.
+     *
+     * @return void
+     * @throws InvalidArgumentException
+     */
     protected function validateUnits(): void
     {
         $validUnits = collect(static::$conversionFactors)->keys()->toArray();
 
-        if (! in_array($this->fromUnit, $validUnits)) {
+        if (!in_array($this->fromUnit, $validUnits)) {
             throw new InvalidArgumentException("Invalid 'from' unit: {$this->fromUnit}");
         }
 
-        if (! in_array($this->toUnit, $validUnits)) {
+        if (!in_array($this->toUnit, $validUnits)) {
             throw new InvalidArgumentException("Invalid 'to' unit: {$this->toUnit}");
         }
     }
