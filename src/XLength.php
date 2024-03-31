@@ -8,8 +8,6 @@ class XLength
 {
     /**
      * Unit conversion factors (base unit: Meter)
-     *
-     * @var array
      */
     protected static array $conversionFactors = [
         'Inch' => 0.0254,
@@ -24,11 +22,6 @@ class XLength
 
     /**
      * Create a new XLength instance.
-     *
-     * @param  string  $fromUnit
-     * @param  string  $toUnit
-     * @param  float  $length
-     * @return static
      */
     public static function convert(string $fromUnit, string $toUnit, float $length): static
     {
@@ -37,10 +30,6 @@ class XLength
 
     /**
      * XLength constructor.
-     *
-     * @param  string  $fromUnit
-     * @param  string  $toUnit
-     * @param  float  $length
      */
     public function __construct(
         protected string $fromUnit,
@@ -52,8 +41,6 @@ class XLength
 
     /**
      * Get the converted length value.
-     *
-     * @return float
      */
     public function getResult(): float
     {
@@ -62,8 +49,6 @@ class XLength
 
     /**
      * Convert the length to the desired unit.
-     *
-     * @return float
      */
     protected function convertLength(): float
     {
@@ -79,13 +64,11 @@ class XLength
     /**
      * Get the conversion factor for a given unit.
      *
-     * @param  string  $unit
-     * @return float
      * @throws InvalidArgumentException
      */
     protected function getConversionFactor(string $unit): float
     {
-        if (!array_key_exists($unit, static::$conversionFactors)) {
+        if (! array_key_exists($unit, static::$conversionFactors)) {
             throw new InvalidArgumentException("Invalid unit: {$unit}");
         }
 
@@ -95,18 +78,17 @@ class XLength
     /**
      * Validate the input units.
      *
-     * @return void
      * @throws InvalidArgumentException
      */
     protected function validateUnits(): void
     {
         $validUnits = collect(static::$conversionFactors)->keys()->toArray();
 
-        if (!in_array($this->fromUnit, $validUnits)) {
+        if (! in_array($this->fromUnit, $validUnits)) {
             throw new InvalidArgumentException("Invalid 'from' unit: {$this->fromUnit}");
         }
 
-        if (!in_array($this->toUnit, $validUnits)) {
+        if (! in_array($this->toUnit, $validUnits)) {
             throw new InvalidArgumentException("Invalid 'to' unit: {$this->toUnit}");
         }
     }
