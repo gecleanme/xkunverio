@@ -70,11 +70,10 @@ class XLength
         $fromFactor = $this->getConversionFactor($this->fromUnit);
         $toFactor = $this->getConversionFactor($this->toUnit);
 
-        // Convert from source unit to meters
-        $meterValue = $this->length * $fromFactor;
+        $meterValue = $this->length * $fromFactor; // Convert from source unit to meters
 
-        // Convert from meters to target unit
-        return $meterValue / $toFactor;
+        return $meterValue / $toFactor;  // Convert from meters to target unit
+
     }
 
     /**
