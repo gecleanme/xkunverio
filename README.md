@@ -4,7 +4,8 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/gecleanme/xkunverio/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/gecleanme/xkunverio/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/gecleanme/xkunverio/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/gecleanme/xkunverio/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/gecleanme/xkunverio.svg?style=flat-square)](https://packagist.org/packages/gecleanme/xkunverio)
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+
+Zero-dependency slim Laravel package to convert between different length/distance units with ease
 
 ## Installation
 
@@ -14,37 +15,17 @@ You can install the package via composer:
 composer require gecleanme/xkunverio
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="xkunverio-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="xkunverio-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="xkunverio-views"
-```
-
 ## Usage
  
 ```php
-$xkunverio = new gecleanme\Xkunverio();
-echo $xkunverio->echoPhrase('Hello, gecleanme!');
+use gecleanme\Xkunverio\Enums\xUnit;
+use gecleanme\Xkunverio\XLength;
+
+// Invoke the 'convert' method and feed it the "unit from" and the "unit to" and the length/distance
+
+// Convert one Kilometer to Meters
+
+$conversion = XLength::convert(xUnit::Kilometer, xUnit::Meter, 1)->getResult(); //1000.0
 ```
 
 ## Testing
@@ -57,18 +38,13 @@ composer test
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+Report them by [Emailing](mailto:promomegm@gmail.com) me
 
 ## Credits
 
 - [Milad Khader](https://github.com/gecleanme)
-- [All Contributors](../../contributors)
 
 ## License
 
