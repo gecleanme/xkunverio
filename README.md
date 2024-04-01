@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/gecleanme/xkunverio/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/gecleanme/xkunverio/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/gecleanme/xkunverio.svg?style=flat-square)](https://packagist.org/packages/gecleanme/xkunverio)
 
-Zero-dependency slim Laravel package to convert between different length/distance units with ease
+Zero-dependency, slim Laravel package to convert between different length/distance units with ease
 
 ## Installation
 
@@ -21,7 +21,7 @@ composer require gecleanme/xkunverio
 use gecleanme\Xkunverio\Enums\xUnit;
 use gecleanme\Xkunverio\XLength;
 
-// Invoke the 'convert' method and feed it the "unit from" and the "unit to" and the length/distance
+// Invoke the 'convert' method with the "unit from", "unit to" and the "length/distance"
 
 // Convert one Kilometer to Meters
 
@@ -33,6 +33,17 @@ $conversion = XLength::convert(xUnit::Kilometer, xUnit::Meter, 1)->getResult(); 
 ```bash
 composer test
 ```
+
+## Supported Units
+
+- Meter
+- Kilometer
+- Mile
+- Yard
+- Centimeter
+- Inch
+- Feet
+- Millimeter
 
 ## Changelog
 
