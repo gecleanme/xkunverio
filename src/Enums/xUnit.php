@@ -2,17 +2,56 @@
 
 namespace gecleanme\Xkunverio\Enums;
 
+/**
+ * Enum representing different length units and their conversion factors.
+ */
 enum xUnit: string
 {
+    /**
+     * Inch unit.
+     */
     case Inch = 'Inch';
+
+    /**
+     * Feet unit.
+     */
     case Feet = 'Feet';
+
+    /**
+     * Yard unit.
+     */
     case Yard = 'Yard';
+
+    /**
+     * Mile unit.
+     */
     case Mile = 'Mile';
+
+    /**
+     * Millimeter unit.
+     */
     case Millimeter = 'Millimeter';
+
+    /**
+     * Centimeter unit.
+     */
     case Centimeter = 'Centimeter';
+
+    /**
+     * Meter unit.
+     */
     case Meter = 'Meter';
+
+    /**
+     * Kilometer unit.
+     */
     case Kilometer = 'Kilometer';
 
+    /**
+     * Get the conversion factor for the current unit.
+     *
+     * @return float The conversion factor for the current unit.
+     */
     public function conversionFactor(): float
     {
         return match ($this) {

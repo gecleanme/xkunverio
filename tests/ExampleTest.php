@@ -9,6 +9,6 @@ use gecleanme\Xkunverio\XLength;
 //});
 
 it('returns converted values', function () {
-    $conversion = XLength::convert(xUnit::Kilometer, xUnit::Meter, 1)->getResult();
-    expect($conversion)->toBe(1000.0);
+    $conversion = XLength::convert(xUnit::Kilometer, xUnit::Meter, 1.5)->getResult();
+    expect($conversion)->toBe(1500.0);
 });
