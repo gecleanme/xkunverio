@@ -8,11 +8,6 @@ class XLength
 {
     /**
      * Create a new XLength instance.
-     *
-     * @param  xUnit  $fromUnit
-     * @param  xUnit  $toUnit
-     * @param  float $length
-     * @return static
      */
     public static function convert(xUnit $fromUnit, xUnit $toUnit, float $length): static
     {
@@ -21,10 +16,6 @@ class XLength
 
     /**
      * XLength constructor.
-     *
-     * @param  xUnit  $fromUnit
-     * @param  xUnit  $toUnit
-     * @param  float $length
      */
     public function __construct(
         protected xUnit $fromUnit,
@@ -35,8 +26,6 @@ class XLength
 
     /**
      * Get the converted length value.
-     *
-     * @return float
      */
     public function getResult(): float
     {
@@ -45,8 +34,6 @@ class XLength
 
     /**
      * Convert the length to the desired unit.
-     *
-     * @return float
      */
     protected function convertLength(): float
     {
