@@ -2,45 +2,41 @@
 
 namespace gecleanme\Xkunverio;
 
-use InvalidArgumentException;
+use gecleanme\Xkunverio\Enums\xUnit;
 
 class XLength
 {
     /**
-     * Unit conversion factors (base unit: Meter)
-     */
-    protected static array $conversionFactors = [
-        'Inch' => 0.0254,
-        'Feet' => 0.3048,
-        'Yard' => 0.9144,
-        'Mile' => 1609.344,
-        'Millimeter' => 0.001,
-        'Centimeter' => 0.01,
-        'Meter' => 1,
-        'Kilometer' => 1000,
-    ];
-
-    /**
      * Create a new XLength instance.
+     *
+     * @param  xUnit  $fromUnit
+     * @param  xUnit  $toUnit
+     * @param  float $length
+     * @return static
      */
-    public static function convert(string $fromUnit, string $toUnit, float $length): static
+    public static function convert(xUnit $fromUnit, xUnit $toUnit, float $length): static
     {
         return new static($fromUnit, $toUnit, $length);
     }
 
     /**
      * XLength constructor.
+     *
+     * @param  xUnit  $fromUnit
+     * @param  xUnit  $toUnit
+     * @param  float $length
      */
     public function __construct(
-        protected string $fromUnit,
-        protected string $toUnit,
+        protected xUnit $fromUnit,
+        protected xUnit $toUnit,
         protected float $length,
     ) {
-        $this->validateUnits();
     }
 
     /**
      * Get the converted length value.
+     *
+     * @return float
      */
     public function getResult(): float
     {
@@ -49,47 +45,16 @@ class XLength
 
     /**
      * Convert the length to the desired unit.
+     *
+     * @return float
      */
     protected function convertLength(): float
     {
-        $fromFactor = $this->getConversionFactor($this->fromUnit);
-        $toFactor = $this->getConversionFactor($this->toUnit);
+        $fromFactor = $this->fromUnit->conversionFactor();
+        $toFactor = $this->toUnit->conversionFactor();
 
         $meterValue = $this->length * $fromFactor; // Convert from source unit to meters
 
-        return $meterValue / $toFactor;  // Convert from meters to target unit
-
-    }
-
-    /**
-     * Get the conversion factor for a given unit.
-     *
-     * @throws InvalidArgumentException
-     */
-    protected function getConversionFactor(string $unit): float
-    {
-        if (! array_key_exists($unit, static::$conversionFactors)) {
-            throw new InvalidArgumentException("Invalid unit: {$unit}");
-        }
-
-        return static::$conversionFactors[$unit];
-    }
-
-    /**
-     * Validate the input units.
-     *
-     * @throws InvalidArgumentException
-     */
-    protected function validateUnits(): void
-    {
-        $validUnits = collect(static::$conversionFactors)->keys()->toArray();
-
-        if (! in_array($this->fromUnit, $validUnits)) {
-            throw new InvalidArgumentException("Invalid 'from' unit: {$this->fromUnit}");
-        }
-
-        if (! in_array($this->toUnit, $validUnits)) {
-            throw new InvalidArgumentException("Invalid 'to' unit: {$this->toUnit}");
-        }
+        return $meterValue / $toFactor; // Convert from meters to target unit
     }
 }
