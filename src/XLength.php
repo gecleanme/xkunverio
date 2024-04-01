@@ -12,10 +12,9 @@ class XLength
     /**
      * Create a new XLength instance.
      *
-     * @param  xUnit  $fromUnit The unit to convert from.
-     * @param  xUnit  $toUnit   The unit to convert to.
-     * @param  float  $length   The length value to be converted.
-     * @return static
+     * @param  xUnit  $fromUnit  The unit to convert from.
+     * @param  xUnit  $toUnit  The unit to convert to.
+     * @param  float  $length  The length value to be converted.
      */
     public static function convert(xUnit $fromUnit, xUnit $toUnit, float $length): static
     {
@@ -25,9 +24,9 @@ class XLength
     /**
      * XLength constructor.
      *
-     * @param  xUnit  $fromUnit The unit to convert from.
-     * @param  xUnit  $toUnit   The unit to convert to.
-     * @param  float  $length   The length value to be converted.
+     * @param  xUnit  $fromUnit  The unit to convert from.
+     * @param  xUnit  $toUnit  The unit to convert to.
+     * @param  float  $length  The length value to be converted.
      */
     public function __construct(
         protected xUnit $fromUnit,
