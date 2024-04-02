@@ -16,16 +16,16 @@ composer require gecleanme/xkunverio
 ```
 
 ## Usage
- 
+
 ```php
-use gecleanme\Xkunverio\Enums\xUnit;
+use gecleanme\Xkunverio\Enums\XLenUnit;
 use gecleanme\Xkunverio\XLength;
 
 // Invoke the 'convert' method with the "unit from", "unit to" and the "length/distance"
 
 // Convert one Kilometer to Meters
 
-$conversion = XLength::convert(xUnit::Kilometer, xUnit::Meter, 1)->getResult(); //1000.0
+$conversion = XLength::convert(XLenUnit::Kilometer, XLenUnit::Meter, 1)->getResult(); //1000.0
 ```
 
 ## Testing

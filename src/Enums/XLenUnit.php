@@ -5,7 +5,7 @@ namespace gecleanme\Xkunverio\Enums;
 /**
  * Enum representing different length units and their conversion factors.
  */
-enum xUnit: string
+enum XLenUnit: string
 {
     /**
      * Inch unit.
