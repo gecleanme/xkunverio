@@ -32,5 +32,4 @@ enum XTempUnit: string
             self::Kelvin => 273.15,
         };
     }
-
 }

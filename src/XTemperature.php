@@ -15,7 +15,6 @@ class XTemperature
      * @param  XTempUnit  $fromUnit  The unit to convert from.
      * @param  XTempUnit  $toUnit  The unit to convert to.
      * @param  float  $temperature  The temperature value to be converted.
-     * @return static
      */
     public static function convert(XTempUnit $fromUnit, XTempUnit $toUnit, float $temperature): static
     {
@@ -59,18 +58,22 @@ class XTemperature
         if (is_array($fromFactor) && is_array($toFactor)) {
             // Handle Fahrenheit conversions
             $celsius = ($this->temperature - $fromFactor['sub_add']) / $fromFactor['div_mul'];
+
             return ($celsius * $toFactor['div_mul']) + $toFactor['sub_add'];
         } elseif (is_array($fromFactor)) {
             // from Fahrenheit to Celsius/Kelvin
             $celsius = ($this->temperature - $fromFactor['sub_add']) / $fromFactor['div_mul'];
+
             return $celsius + $toFactor;
         } elseif (is_array($toFactor)) {
             // Celsius/Kelvin to Fahrenheit
             $celsius = $this->temperature - $fromFactor;
+
             return ($celsius * $toFactor['div_mul']) + $toFactor['sub_add'];
         } else {
             // Celsius and Kelvin
             $celsius = $this->temperature - $fromFactor;
+
             return $celsius + $toFactor;
         }
     }
