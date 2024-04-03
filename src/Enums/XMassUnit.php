@@ -2,8 +2,6 @@
 
 namespace gecleanme\Xkunverio\Enums;
 
-use function Laravel\Prompts\select;
-
 enum XMassUnit: string
 {
     /**
@@ -51,7 +49,6 @@ enum XMassUnit: string
      */
     case Short_Tonnes = 'Short Tonnes';
 
-
     /**
      * Get the conversion factor for the current unit.
      *
@@ -83,5 +80,4 @@ enum XMassUnit: string
         return array_column(self::cases(), 'value');
 
     }
-
 }

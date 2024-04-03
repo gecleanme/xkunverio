@@ -18,7 +18,7 @@ class XMass
      */
     public static function convert(XMassUnit $fromUnit, XMassUnit $toUnit, float $mass): static
     {
-            return new static($fromUnit, $toUnit, $mass);
+        return new static($fromUnit, $toUnit, $mass);
     }
 
     /**
