@@ -27,9 +27,22 @@ enum XTempUnit: string
     public function conversionFactor(): float|array
     {
         return match ($this) {
-            self::Celsius => 0,
+            self::Celsius => 0.0,
             self::Fahrenheit => ['sub_add' => 32, 'div_mul' => 1.8],
             self::Kelvin => 273.15,
+            default => null,
         };
     }
+
+    /**
+     * Get Enum case values as an array.
+     *
+     * @return array Enum case values array.
+     */
+    public static function getCases(): array
+    {
+        return array_column(self::cases(), 'value');
+
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace gecleanme\Xkunverio;
 
 use gecleanme\Xkunverio\Enums\XTempUnit;
+use gecleanme\Xkunverio\Exceptions\InvalidTempUnitException;
 
 /**
  * XTemperature class for converting temperatures between different units.
@@ -18,7 +19,7 @@ class XTemperature
      */
     public static function convert(XTempUnit $fromUnit, XTempUnit $toUnit, float $temperature): static
     {
-        return new static($fromUnit, $toUnit, $temperature);
+            return new static($fromUnit, $toUnit, $temperature);
     }
 
     /**
