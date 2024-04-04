@@ -16,3 +16,6 @@ All notable changes to `xkunverio` will be documented in this file.
   - Volume
   - Temperature
 - Completed Tests 
+
+# 2.1.1
+- Updated Package Desc
