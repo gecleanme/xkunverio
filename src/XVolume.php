@@ -2,35 +2,35 @@
 
 namespace gecleanme\Xkunverio;
 
-use gecleanme\Xkunverio\Enums\XVolUnit;
+use gecleanme\Xkunverio\Enums\XVolumeUnit;
 
 /**
- * XVol class for converting Volumes between different units.
+ * XVolume class for converting Volumeumes between different units.
  */
-class XVol
+class XVolume
 {
     /**
-     * Create a new XVol instance.
+     * Create a new XVolume instance.
      *
-     * @param  XVolUnit  $fromUnit  The unit to convert from.
-     * @param  XVolUnit  $toUnit  The unit to convert to.
+     * @param  XVolumeUnit  $fromUnit  The unit to convert from.
+     * @param  XVolumeUnit  $toUnit  The unit to convert to.
      * @param  float  $vol  The volume value to be converted.
      */
-    public static function convert(XVolUnit $fromUnit, XVolUnit $toUnit, float $vol): static
+    public static function convert(XVolumeUnit $fromUnit, XVolumeUnit $toUnit, float $vol): static
     {
         return new static($fromUnit, $toUnit, $vol);
     }
 
     /**
-     * XVol constructor.
+     * XVolume constructor.
      *
-     * @param  XVolUnit  $fromUnit  The unit to convert from.
-     * @param  XVolUnit  $toUnit  The unit to convert to.
+     * @param  XVolumeUnit  $fromUnit  The unit to convert from.
+     * @param  XVolumeUnit  $toUnit  The unit to convert to.
      * @param  float  $vol  The volume value to be converted.
      */
     public function __construct(
-        protected XVolUnit $fromUnit,
-        protected XVolUnit $toUnit,
+        protected XVolumeUnit $fromUnit,
+        protected XVolumeUnit $toUnit,
         protected float $vol,
     ) {
     }
@@ -42,7 +42,7 @@ class XVol
      */
     public function getResult(): float
     {
-        return $this->convertVol();
+        return $this->convertVolume();
     }
 
     /**
@@ -50,7 +50,7 @@ class XVol
      *
      * @return float The converted volume value.
      */
-    protected function convertVol(): float
+    protected function convertVolume(): float
     {
         $fromFactor = $this->fromUnit->conversionFactor();
         $toFactor = $this->toUnit->conversionFactor();

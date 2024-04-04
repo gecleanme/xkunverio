@@ -2,7 +2,7 @@
 
 namespace gecleanme\Xkunverio\Enums;
 
-enum XVolUnit: string
+enum XVolumeUnit: string
 {
     /**
      * Cubic Inches unit.

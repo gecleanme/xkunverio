@@ -2,7 +2,7 @@
 
 namespace gecleanme\Xkunverio\Enums;
 
-enum XTempUnit: string
+enum XTemperatureUnit: string
 {
     /**
      * Celsius unit.

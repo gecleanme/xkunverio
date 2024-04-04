@@ -2,7 +2,7 @@
 
 namespace gecleanme\Xkunverio;
 
-use gecleanme\Xkunverio\Enums\XTempUnit;
+use gecleanme\Xkunverio\Enums\XTemperatureUnit;
 
 /**
  * XTemperature class for converting temperatures between different units.
@@ -12,11 +12,11 @@ class XTemperature
     /**
      * Create a new XTemperature instance.
      *
-     * @param  XTempUnit  $fromUnit  The unit to convert from.
-     * @param  XTempUnit  $toUnit  The unit to convert to.
+     * @param  XTemperatureUnit  $fromUnit  The unit to convert from.
+     * @param  XTemperatureUnit  $toUnit  The unit to convert to.
      * @param  float  $temperature  The temperature value to be converted.
      */
-    public static function convert(XTempUnit $fromUnit, XTempUnit $toUnit, float $temperature): static
+    public static function convert(XTemperatureUnit $fromUnit, XTemperatureUnit $toUnit, float $temperature): static
     {
         return new static($fromUnit, $toUnit, $temperature);
     }
@@ -24,13 +24,13 @@ class XTemperature
     /**
      * XTemperature constructor.
      *
-     * @param  XTempUnit  $fromUnit  The unit to convert from.
-     * @param  XTempUnit  $toUnit  The unit to convert to.
+     * @param  XTemperatureUnit  $fromUnit  The unit to convert from.
+     * @param  XTemperatureUnit  $toUnit  The unit to convert to.
      * @param  float  $temperature  The temperature value to be converted.
      */
     public function __construct(
-        protected XTempUnit $fromUnit,
-        protected XTempUnit $toUnit,
+        protected XTemperatureUnit $fromUnit,
+        protected XTemperatureUnit $toUnit,
         protected float $temperature,
     ) {
     }

@@ -2,7 +2,7 @@
 
 namespace gecleanme\Xkunverio;
 
-use gecleanme\Xkunverio\Enums\XLenUnit;
+use gecleanme\Xkunverio\Enums\XLengthUnit;
 
 /**
  * XLength class for converting lengths between different units.
@@ -12,11 +12,11 @@ class XLength
     /**
      * Create a new XLength instance.
      *
-     * @param  XLenUnit  $fromUnit  The unit to convert from.
-     * @param  XLenUnit  $toUnit  The unit to convert to.
+     * @param  XLengthUnit  $fromUnit  The unit to convert from.
+     * @param  XLengthUnit  $toUnit  The unit to convert to.
      * @param  float  $length  The length value to be converted.
      */
-    public static function convert(XLenUnit $fromUnit, XLenUnit $toUnit, float $length): static
+    public static function convert(XLengthUnit $fromUnit, XLengthUnit $toUnit, float $length): static
     {
         return new static($fromUnit, $toUnit, $length);
     }
@@ -24,13 +24,13 @@ class XLength
     /**
      * XLength constructor.
      *
-     * @param  XLenUnit  $fromUnit  The unit to convert from.
-     * @param  XLenUnit  $toUnit  The unit to convert to.
+     * @param  XLengthUnit  $fromUnit  The unit to convert from.
+     * @param  XLengthUnit  $toUnit  The unit to convert to.
      * @param  float  $length  The length value to be converted.
      */
     public function __construct(
-        protected XLenUnit $fromUnit,
-        protected XLenUnit $toUnit,
+        protected XLengthUnit $fromUnit,
+        protected XLengthUnit $toUnit,
         protected float $length,
     ) {
     }
