@@ -20,7 +20,7 @@ composer require gecleanme/xkunverio
 ```php
 
 // use the designated Conversion Type Class & its corresponding Enum following the naming pattern :
-//"X{ConversionType}" & "X{ConversionTypeUnit}" for the Enum
+//"X{ConversionType}" & "X{ConversionType}Unit" for the Enum
 
 use gecleanme\Xkunverio\Enums\XLengthUnit;
 use gecleanme\Xkunverio\XLength;
