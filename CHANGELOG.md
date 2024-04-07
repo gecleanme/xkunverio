@@ -19,3 +19,6 @@ All notable changes to `xkunverio` will be documented in this file.
 
 # 2.1.1
 - Updated Package Desc
+
+# 2.1.2
+- Renamed getResult() Helper
