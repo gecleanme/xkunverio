@@ -40,7 +40,7 @@ class XLength
      *
      * @return float The converted length value.
      */
-    public function getResult(): float
+    public function get(): float
     {
         return $this->convertLength();
     }

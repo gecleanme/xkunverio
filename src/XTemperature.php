@@ -40,7 +40,7 @@ class XTemperature
      *
      * @return float The converted temperature value.
      */
-    public function getResult(): float
+    public function get(): float
     {
         return $this->convertTemperature();
     }

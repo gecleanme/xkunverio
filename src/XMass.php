@@ -40,7 +40,7 @@ class XMass
      *
      * @return float The converted mass value.
      */
-    public function getResult(): float
+    public function get(): float
     {
         return $this->convertMass();
     }

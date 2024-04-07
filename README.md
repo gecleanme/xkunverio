@@ -30,7 +30,7 @@ use gecleanme\Xkunverio\XLength;
 
 // Convert one Kilometer to Meters
 XLength::convert(XLengthUnit::Kilometer, XLengthUnit::Meter, 1)
-    ->getResult(); //1000.0
+    ->get(); //1000.0
 ```
 
 ## Testing

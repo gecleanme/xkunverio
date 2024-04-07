@@ -40,7 +40,7 @@ class XSpeed
      *
      * @return float The converted speed value.
      */
-    public function getResult(): float
+    public function get(): float
     {
         return $this->convertSpeed();
     }

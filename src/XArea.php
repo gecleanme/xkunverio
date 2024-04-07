@@ -40,7 +40,7 @@ class XArea
      *
      * @return float The converted area value.
      */
-    public function getResult(): float
+    public function get(): float
     {
         return $this->convertArea();
     }

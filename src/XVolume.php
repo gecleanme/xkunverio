@@ -40,7 +40,7 @@ class XVolume
      *
      * @return float The converted volume value.
      */
-    public function getResult(): float
+    public function get(): float
     {
         return $this->convertVolume();
     }
