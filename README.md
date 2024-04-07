@@ -26,7 +26,7 @@ use gecleanme\Xkunverio\Enums\XLengthUnit;
 use gecleanme\Xkunverio\XLength;
 
 // Invoke the 'convert' method with the "unit from", "unit to" and the measurement value then call
-// getResult()
+// get()
 
 // Convert one Kilometer to Meters
 XLength::convert(XLengthUnit::Kilometer, XLengthUnit::Meter, 1)
