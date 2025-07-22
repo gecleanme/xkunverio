@@ -113,10 +113,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Report them by [Emailing](mailto:promomegm@gmail.com) me
 
-## Credits
-
-- [Milad Khader](https://github.com/gecleanme)
-
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
